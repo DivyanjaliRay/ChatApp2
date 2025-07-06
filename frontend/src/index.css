@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .chat-bubble {
+        @apply px-4 py-2 rounded-lg max-w-[80%] break-words;
+    }
+
+    .chat-bubble-primary {
+        @apply bg-blue-500 text-white rounded-br-none;
+    }
+
+    .chat-bubble-secondary {
+        @apply bg-gray-200 text-gray-800 rounded-bl-none;
+    }
+
+    .message-container {
+        @apply transition-all duration-300 ease-in-out;
+    }
+
+    .animate-slide-up {
+        animation: slideUp 0.3s ease-out;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Chat container styles */
+.chat {
+    @apply flex flex-col gap-1;
+}
+
+.chat-image {
+    @apply self-end;
+}
+
+.chat-header {
+    @apply text-sm font-medium text-gray-600;
+}
+
+.chat-footer {
+    @apply text-xs;
+}
+
+/* Avatar styles */
+.avatar {
+    @apply relative;
+}
+
+.avatar img {
+    @apply rounded-full;
+}
+
+/* Online status indicator */
+.online-indicator {
+    @apply absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white;
+}
+
+.online-indicator.online {
+    @apply bg-green-500;
+}
+
+.online-indicator.offline {
+    @apply bg-gray-400;
+}
+
+body{
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../public/bg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+}
+
+/* Message animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+/* Message container styles */
+.message-container {
+    transition: all 0.3s ease;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2d3748;
+}
+
+/* Message bubble styles */
+.message-bubble {
+    max-width: 70%;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    margin: 0.5rem 0;
+    word-wrap: break-word;
+}
+
+.message-bubble.sent {
+    background-color: #3b82f6;
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.message-bubble.received {
+    background-color: #2d3748;
+    color: white;
+    margin-right: auto;
+    border-bottom-left-radius: 0.25rem;
+}
+
+/* Loading animation */
+.loading-spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3b82f6;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+::-webkit-scrollbar  {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #555;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #121212;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #242424;
+}
+
+.message-row {
+    width: 100%;
+    display: flex;
+}
+
+.message-row-sent {
+    justify-content: flex-end;
+}
+
+.message-row-received {
+    justify-content: flex-start;
+}
+
+.message-bubble-sent {
+    background: #3b82f6;
+    color: white;
+    border-radius: 16px;
+    border-bottom-right-radius: 4px;
+    margin-left: 48px;
+    margin-right: 0;
+    padding: 12px;
+    max-width: 70%;
+    word-break: break-word;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.message-bubble-received {
+    background: #e5e7eb;
+    color: #1f2937;
+    border-radius: 16px;
+    border-bottom-left-radius: 4px;
+    margin-right: 48px;
+    margin-left: 0;
+    padding: 12px;
+    max-width: 70%;
+    word-break: break-word;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
